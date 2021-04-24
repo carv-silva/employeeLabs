@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # my app
-    #'employeeLabs',
+    'employees',
     # 3o apps
     'rest_framework',
 ]

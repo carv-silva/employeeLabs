@@ -82,7 +82,3 @@ curl -XDELETE http://0.0.0.0:21256/employee/[id que deseja apagar EX:2]/
 
 
 
-
-
-
-

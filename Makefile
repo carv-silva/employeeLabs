@@ -6,14 +6,14 @@ sk:
 
 ti:
 	python manage.py makemigrations
+	python manage.py makemigrations employees
 
 te:
 	python manage.py migrate
 
 usr:
 	python manage.py createsuperuser
-	
+
 migration:
 	rm -rf api/migrations
 	@echo "Migrações de banco excluídas"
-

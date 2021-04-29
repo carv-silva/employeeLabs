@@ -68,30 +68,26 @@ $ curl -POST http://0.0.0.0:21256/employee/ --data '{
     "name": "Arnaldo Pereira",
     "email": "arnaldo@luizalabs.com",
     "department": "Architecture"
-}' --header "Content-Type: application/json"
-```
+}' --header "Content-Type: application/json" ```
 
 ```
 $ curl -POST http://0.0.0.0:21256/employee/ --data '{
     "name": "Renato Pedigoni",
     "email": "renato@luizalabs.com",
     "department": "E-commerce"
-}' --header "Content-Type: application/json"
-```
+}' --header "Content-Type: application/json" ```
 
 ```
 $ curl -XPOST http://0.0.0.0:21256/employee/ --data '{
     "name": "Thiago Catoto",
     "email": "catoto@luizalabs.com",
     "department": "Mobile"
-}' --header "Content-Type: application/json"
-```
+}' --header "Content-Type: application/json" ```
 
 2. **Retornando os registro**
 
 ```
-$ curl -H "Content-Type: application/Django" http://0.0.0.0:21256/employee/
-```
+$ curl -H "Content-Type: application/Django" http://0.0.0.0:21256/employee/ ```
 
 3. **Atualizando o registro:**
 
@@ -100,8 +96,7 @@ $ curl -XPUT http://0.0.0.0:21256/employee/[id que deseja alterar EX:2]/ --data 
     "name": "Renato Pedigoni",
     "email": "renato@luizalabs.com",
     "department": "Logistica"
-}' --header "Content-Type: application/json"
-```
+}' --header "Content-Type: application/json" ```
 
 4. **Deletando registro:**
 

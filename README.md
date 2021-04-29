@@ -8,28 +8,41 @@ Foram utilizadas as seguintes tecnologias no desenvolvimento da solução:
 2. **Django** como framework web base;
 3. **Django Rest Framework** como framework para construção de REST APIs;
 4. **SQLite** como banco de dados.
+5. **Heroku** para deploy da aplicação
 
 ### Pré-requisitos
 ```
 Python = > 3.0
 Pip = > 3.0
+Django= > 3.0
+django rest framework = > 3.10
 SQLite = > 2.0
+
 ```
 ### Instalação
 
 ```
-$ git clone https://github.com/carv-silva/employeeLabs.git ~/Downloads
-$ cd ~/Downloads/employeeLabs
+$ git clone https://github.com/carv-silva/employeeLabs.git
+$ cd employeeLabs
 $ python -m venv .venv
 $ source .venv/bin/activate
 $ pip install -r requirements.txt
-$ make ti
-$ make te
 ```
-### Variáveis de Ambiente
+### Variáveis de Ambiente || Configuração SECRET_KEY
+
+$ make sk # --> guardar o valor gerado
+$ vim .env
+    SECRET_KEY = 'colocar o valor gerado pelo make sk'
+    DEBUG = True
+```
 
 ```
-$ make sk
+$ make ti
+$ make te
+
+### Criando um superuser
+```
+$ make usr
 ```
 
 ### Execução
@@ -74,6 +87,29 @@ curl -XPUT http://0.0.0.0:21256/employee/[id que deseja alterar EX:2]/ --data '{
 4. **Deletando registro:**
 
 curl -XDELETE http://0.0.0.0:21256/employee/[id que deseja apagar EX:2]/
+
+
+Os seguintes endpoints são disponibilizados através desta API:
+
+| HTTP Method | URI                                          | Ação
+| ---         | ---                                          | ---
+| POST        | http://0.0.0.0:21256/employee/               | Listar os funcionários
+| POST        | http://0.0.0.0:21256/employee/               | Criar um funcionários
+| GET         | http://0.0.0.0:21256/employee/[id]           | Obter detalhes do funcionário
+| PUT         | http://0.0.0.0:21256/employee/[id]           | Atualizar o funcionário
+| DELETE      | http://0.0.0.0:21256/employee/[id]           | Remover o funcionário
+
+### Deploy Heroku
+
+1. **Django administration**
+[LIVE ON HEROKU ADMIN](https://api-employee.herokuapp.com/admin/)
+
+2. **API ROOT**
+[LIVE ON HEROKU](https://api-employee.herokuapp.com/)
+
+
+
+
 
 
 

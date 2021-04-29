@@ -30,22 +30,31 @@ $ pip install -r requirements.txt
 ```
 ### Variáveis de Ambiente || Configuração SECRET_KEY
 
+```
 $ make sk # --> guardar o valor gerado
 $ vim .env
-    SECRET_KEY = 'colocar o valor gerado pelo make sk'
-    DEBUG = True
 ```
+**Arquivo .env**
+```
+SECRET_KEY = 'colocar o valor gerado pelo make sk'
+DEBUG = True
+```
+
+## Criando e aplicando alterações
 
 ```
 $ make ti
 $ make te
+```
 
 ### Criando um superuser
+
 ```
 $ make usr
 ```
 
 ### Execução
+
 ```
 $ make run
 ```
@@ -54,46 +63,57 @@ $ make run
 
 1. **Inserindo Funcionários**
 
-curl -POST http://0.0.0.0:21256/employee/ --data '{
+```
+$ curl -POST http://0.0.0.0:21256/employee/ --data '{
     "name": "Arnaldo Pereira",
     "email": "arnaldo@luizalabs.com",
     "department": "Architecture"
 }' --header "Content-Type: application/json"
+```
 
-curl -POST http://0.0.0.0:21256/employee/ --data '{
+```
+$ curl -POST http://0.0.0.0:21256/employee/ --data '{
     "name": "Renato Pedigoni",
     "email": "renato@luizalabs.com",
     "department": "E-commerce"
 }' --header "Content-Type: application/json"
+```
 
-curl -XPOST http://0.0.0.0:21256/employee/ --data '{
+```
+$ curl -XPOST http://0.0.0.0:21256/employee/ --data '{
     "name": "Thiago Catoto",
     "email": "catoto@luizalabs.com",
     "department": "Mobile"
 }' --header "Content-Type: application/json"
+```
 
 2. **Retornando os registro**
 
-curl -H "Content-Type: application/Django" http://0.0.0.0:21256/employee/
+```
+$ curl -H "Content-Type: application/Django" http://0.0.0.0:21256/employee/
+```
 
 3. **Atualizando o registro:**
 
-curl -XPUT http://0.0.0.0:21256/employee/[id que deseja alterar EX:2]/ --data '{
+```
+$ curl -XPUT http://0.0.0.0:21256/employee/[id que deseja alterar EX:2]/ --data '{
     "name": "Renato Pedigoni",
     "email": "renato@luizalabs.com",
     "department": "Logistica"
 }' --header "Content-Type: application/json"
+```
 
 4. **Deletando registro:**
 
-curl -XDELETE http://0.0.0.0:21256/employee/[id que deseja apagar EX:2]/
-
+```
+$ curl -XDELETE http://0.0.0.0:21256/employee/[id que deseja apagar EX:2]/
+```
 
 Os seguintes endpoints são disponibilizados através desta API:
 
 | HTTP Method | URI                                          | Ação
 | ---         | ---                                          | ---
-| POST        | http://0.0.0.0:21256/employee/               | Listar os funcionários
+| GET         | http://0.0.0.0:21256/employee/               | Listar os funcionários
 | POST        | http://0.0.0.0:21256/employee/               | Criar um funcionários
 | GET         | http://0.0.0.0:21256/employee/[id]           | Obter detalhes do funcionário
 | PUT         | http://0.0.0.0:21256/employee/[id]           | Atualizar o funcionário

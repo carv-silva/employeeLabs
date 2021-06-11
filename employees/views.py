@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+from django.views.generic import ListView
 from employees.models import Employee, Department, Payroll
 from employees.serializer import EmployeeSerializer, DepartmentSerializer, PayrollSerializer
 
@@ -19,3 +20,9 @@ class DepartmentsViewSet(viewsets.ModelViewSet):
 class PayrollsViewSet(viewsets.ModelViewSet):
     queryset = Payroll.objects.all()
     serializer_class = PayrollSerializer
+
+
+'''# listando Payroll
+class PayrollsListView(ListView):
+    model = Payroll
+'''

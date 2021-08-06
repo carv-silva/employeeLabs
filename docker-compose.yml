@@ -1,4 +1,4 @@
-version: "3.3"
+version: '3.8'
 
 services:
   web:
@@ -11,12 +11,4 @@ services:
     depends_on:
       - db
   db:
-    image: postgres:13
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=cvrs
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-
-volumes:
-  postgres_data:
+    image: postgres

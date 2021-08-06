@@ -41,13 +41,11 @@ class Payroll(models.Model):
     benefits = models.CharField(max_length=2, choices=BENEFITS, blank=False,
                                 null=False, default='N')
 
-    def save(self, tax_salary=gross_salary, *args, **kwargs):
+    '''def save(self, tax_salary=gross_salary, *args, **kwargs):
         tax = (tax_salary / 100) * 11
-        return super(Payroll, self).save(*args, **kwargs)
+        return super(Payroll, self).save(*args, **kwargs)'''
 
-
-
-    '''def tax_gross_salary(tax):
+    ''' def tax_gross_salary(tax):
             tax = (tax / 100) * 11
             return tax
 
@@ -55,9 +53,9 @@ class Payroll(models.Model):
         self.gross_salary = (gross_salary / 100) * 11
         # gross_salary = (gross_salary / 100) * 11
         # super(gross_salary, self).save(*args, **kwargs)
-        return self.gross_salary'''
-        #
-        # self.gross_salary = (gross_salary / 100) * 11
+        return self.gross_salary
+        # self.gross_salary = (gross_salary / 100) * 11'''
+
 
 
 

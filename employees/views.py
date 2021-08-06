@@ -6,14 +6,16 @@ from employees.serializer import EmployeeSerializer, DepartmentSerializer, Payro
 
 # exibindo os funcionarios
 class EmployeesViewSet(viewsets.ModelViewSet):
-    queryset = Employee.objects.all()
+    queryset = Employee.objects.all().order_by('name')
     serializer_class = EmployeeSerializer
+    max_limit = 10
 
 
 # exibindo departamento
 class DepartmentsViewSet(viewsets.ModelViewSet):
-    queryset = Department.objects.all()
+    queryset = Department.objects.all().order_by('name')
     serializer_class = DepartmentSerializer
+    max_limit = 10
 
 
 # exibindo folha de pagamento

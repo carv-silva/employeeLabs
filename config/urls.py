@@ -4,12 +4,15 @@ from employees.views import EmployeesViewSet, DepartmentsViewSet, PayrollsViewSe
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'employee', EmployeesViewSet)
+router.register(r'employees', EmployeesViewSet)
 router.register(r'departments', DepartmentsViewSet)
 router.register(r'payrolls', PayrollsViewSet)
+# router.register(r'payrolls', PayrollsListView.as_view())
+# path('publishers/', PublisherListView.as_view()),
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
+
 ]
